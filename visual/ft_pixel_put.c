@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_additional.c                                    :+:      :+:    :+:   */
+/*   ft_pixel_put.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmieshko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/04 17:23:10 by kmieshko          #+#    #+#             */
-/*   Updated: 2018/09/04 17:23:11 by kmieshko         ###   ########.fr       */
+/*   Created: 2018/09/13 19:27:10 by kmieshko          #+#    #+#             */
+/*   Updated: 2018/09/13 19:27:11 by kmieshko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "filler.h"
+#include "visual.h"
 
-int	ft_abs(int nb)
+void	ft_pixel_put(t_mlx *mlx, t_color *color, int wide_y, int wide_x)
 {
-	if (nb < 0)
-		nb = -nb;
-	return (nb);
-}
+	int		x;
+	int		y;
 
-int	ft_manhattan_distance(t_filler *filler, int cur_pl, int cur_en)
-{
-	int		res;
-
-	res = ft_abs(filler->pl_coord[cur_pl].x - filler->en_coord[cur_en].x)
-		+ ft_abs(filler->pl_coord[cur_pl].y - filler->en_coord[cur_en].y);
-	return (res);
+	x = mlx->pixel.x;
+	y = mlx->pixel.y;
+	mlx->addr[wide_x + wide_y + y * mlx->size_line + 4 * x] = color->r;
+	mlx->addr[wide_x + wide_y + y * mlx->size_line + 4 * x + 1] = color->g;
+	mlx->addr[wide_x + wide_y + y * mlx->size_line + 4 * x + 2] = color->b;
 }

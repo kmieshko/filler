@@ -88,9 +88,9 @@ static void	ft_init_filler(t_filler *filler)
 	filler->en_count = 0;
 	filler->dist = filler->map.h * filler->map.w;
 	if (filler->pl_coord)
-		free(filler->pl_coord);
+		ft_memdel((void **)&filler->pl_coord);
 	if (filler->en_coord)
-		free(filler->en_coord);
+		ft_memdel((void **)&filler->en_coord);
 	filler->pl_coord = (t_coord *)malloc(sizeof(t_coord) * filler->dist);
 	filler->en_coord = (t_coord *)malloc(sizeof(t_coord) * filler->dist);
 }

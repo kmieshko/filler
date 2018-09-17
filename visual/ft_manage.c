@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_additional.c                                    :+:      :+:    :+:   */
+/*   ft_manage.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmieshko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/04 17:23:10 by kmieshko          #+#    #+#             */
-/*   Updated: 2018/09/04 17:23:11 by kmieshko         ###   ########.fr       */
+/*   Created: 2018/09/14 13:42:55 by kmieshko          #+#    #+#             */
+/*   Updated: 2018/09/14 13:42:58 by kmieshko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "filler.h"
+#include "visual.h"
 
-int	ft_abs(int nb)
+int	ft_manage(int key, t_mlx *mlx)
 {
-	if (nb < 0)
-		nb = -nb;
-	return (nb);
+	if (key == 53)
+		exit(0);
+	if (key == 8)
+		mlx->init_color = -mlx->init_color;
+	if (key == 49)
+		mlx->stop = -mlx->stop;
+	if (key == 37)
+		system("leaks visual");
+	ft_loop(mlx);
+	return (0);
 }
 
-int	ft_manhattan_distance(t_filler *filler, int cur_pl, int cur_en)
+int	ft_exit_mouse(void)
 {
-	int		res;
-
-	res = ft_abs(filler->pl_coord[cur_pl].x - filler->en_coord[cur_en].x)
-		+ ft_abs(filler->pl_coord[cur_pl].y - filler->en_coord[cur_en].y);
-	return (res);
+	exit(0);
+	return (0);
 }

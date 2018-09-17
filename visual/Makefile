@@ -5,51 +5,43 @@
 #                                                     +:+ +:+         +:+      #
 #    By: kmieshko <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2018/08/30 12:37:27 by kmieshko          #+#    #+#              #
-#    Updated: 2018/08/30 12:37:28 by kmieshko         ###   ########.fr        #
+#    Created: 2018/09/13 12:42:59 by kmieshko          #+#    #+#              #
+#    Updated: 2018/09/13 12:43:00 by kmieshko         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = kmieshko.filler
+NAME = visual
 
-SRCS = 	./srcs/ft_create.c \
-		./srcs/ft_fill_struct.c \
-		./srcs/ft_small_map.c \
-		./srcs/ft_big_map.c \
-		./srcs/ft_is_placeable.c \
-		./srcs/ft_additional.c \
-		./srcs/main.c
+SRCS = main.c \
+		ft_draw_map.c \
+		ft_draw_field_cells.c \
+		ft_pixel_put.c \
+		ft_get_struct.c \
+		ft_print_text.c \
+		ft_manage.c
 
 OBJ = $(SRCS:.c=.o)
 
-LIB = ./libft/libft.a
-
-INCL = -I ./incl/
+LIB = ../libft/libft.a
 
 COMPILE = gcc -c
 
-FLAGS = -Wall -Wextra -Werror -O3
+FLAGS = -Wall -Werror -Wextra
+
+FLAGS_GR = -lmlx -framework OpenGL -framework Appkit
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	make -C ./libft
-	make -C ./visual
-	gcc $(OBJ) $(FLAGS) $(LIB) -o $(NAME)
+	gcc $(OBJ) $(FLAGS) $(FLAGS_GR) $(LIB) -o $(NAME)
 
 %.o: %.c
-	$(COMPILE) -o $@ $< $(FLAGS) $(INCL)
+	$(COMPILE) -o $@ $< $(FLAGS)
 	
 clean:
-	make clean -C ./libft
-	make clean -C ./visual
 	rm -rf $(OBJ)
 
 fclean: clean
-	make fclean -C ./libft
-	make fclean -C ./visual
 	rm -rf $(NAME)
 
 re: fclean all
-	make re -C ./libft
-	make re -C ./visual

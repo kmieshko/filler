@@ -43,6 +43,7 @@ typedef struct		s_gnl
 	int				fd;
 }					t_gnl;
 
+int					ft_nb_len(int nb);
 int					get_next_line(int const fd, char **line);
 int					get_next_line_fast(int fd, char **line);
 char				*join(char *s1, char *s2);

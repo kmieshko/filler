@@ -52,6 +52,6 @@ int			main(void)
 	filler = ft_create_filler();
 	if (ft_create_player(filler))
 		ft_main_loop(filler);
-	free(filler);
+	ft_memdel((void **)&filler);
 	return (0);
 }

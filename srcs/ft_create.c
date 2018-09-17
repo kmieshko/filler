@@ -53,10 +53,9 @@ int			ft_create_player(t_filler *filler)
 			filler->pl_id = 'X';
 			filler->en_id = 'O';
 		}
-		free(line);
+		ft_strdel(&line);
 		return (1);
 	}
-	if (line)
-		free(line);
+	ft_strdel(&line);
 	return (0);
 }

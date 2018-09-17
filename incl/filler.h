@@ -29,7 +29,6 @@ typedef struct	s_figure
 {
 	int			w;
 	int			h;
-	int			size;
 	char		**arr;
 }				t_figure;
 
@@ -53,7 +52,6 @@ typedef struct	s_filler
 }				t_filler;
 
 int				ft_abs(int nb);
-int				ft_nb_len(int nb);
 int				ft_manhattan_distance(t_filler *filler, int cur_pl, int cur_en);
 t_filler		*ft_create_filler(void);
 int				ft_create_player(t_filler *filler);
@@ -63,7 +61,5 @@ void			ft_read_token(char *line, t_filler *filler);
 int				ft_is_placeable(t_coord c, t_filler *filler);
 void			ft_big_map(t_filler *filler);
 void			ft_small_map(t_filler *filler);
-
-int				ft_get_next_line(const int fd, char **line);
 
 #endif

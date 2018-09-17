@@ -54,24 +54,24 @@ static void	ft_map_token_size(t_filler *filler, const char *arr, char *line)
 
 void		ft_read_map(char *line, t_filler *filler)
 {
-	int			i;
-	const char	*arr = "Plateau ";
+	int		i;
+	char	*tmp;
 
 	i = 0;
 	if (filler->map.arr)
 	{
 		while (i < filler->map.h)
 		{
-			if (filler->map.arr[i] - 4)
-				free(filler->map.arr[i] - 4);
+			tmp = filler->map.arr[i] - 4;
+			ft_strdel(&tmp);
 			i++;
 		}
 		ft_memdel((void **)&filler->map.arr);
 		i = 0;
 	}
-	ft_map_token_size(filler, arr, line);
+	ft_map_token_size(filler, "Plateau ", line);
 	get_next_line_fast(0, &line);
-	free(line);
+	ft_strdel(&line);
 	filler->map.arr = (char **)malloc(sizeof(char *) * (filler->map.h + 1));
 	while (i < filler->map.h)
 	{
@@ -116,8 +116,7 @@ void		ft_read_token(char *line, t_filler *filler)
 	{
 		while (i < filler->token.h)
 		{
-			if (filler->token.arr[i])
-				free(filler->token.arr[i]);
+			ft_strdel(&(filler->token.arr[i]));
 			i++;
 		}
 		ft_memdel((void **)&filler->token.arr);
