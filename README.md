@@ -37,7 +37,9 @@ make
 
 # Some Examples
 
+![map01](https://github.com/kmieshko/filler/blob/master/examples/filler_small.gif)
 
+![map02](https://github.com/kmieshko/filler/raw/master/examples/filler.gif)
 
 # Disclaimer
 
