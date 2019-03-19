@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = kmieshko.filler
+NAME = ./resources/players/kmieshko.filler
 
 SRCS = 	./srcs/ft_create.c \
 		./srcs/ft_fill_struct.c \

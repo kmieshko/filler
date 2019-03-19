@@ -86,7 +86,7 @@ int		main(void)
 	mlx = ft_create_mlx();
 	if (!(mlx->mlx = mlx_init()))
 		return (0);
-	system("afplay ../filler.wav&");
+	system("afplay ./filler.wav&");
 	mlx->win = mlx_new_window(mlx->mlx, mlx->width, mlx->height, "Filler");
 	mlx_hook(mlx->win, 2, 5, ft_manage, mlx);
 	mlx_loop_hook(mlx->mlx, ft_loop, mlx);

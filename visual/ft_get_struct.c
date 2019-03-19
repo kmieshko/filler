@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "visual.h"
+#include <stdio.h>
 
 static void	ft_mlx_color(t_mlx *mlx)
 {
@@ -57,8 +58,8 @@ void		ft_get_player(char *line, t_mlx *mlx)
 	{
 		mlx->pl_id = 'O';
 		mlx->en_id = 'X';
-		dot_pos = ft_strchr_pos(line, '.');
-		mlx->pl_name = ft_strsub(line, 23, dot_pos - 23);
+		dot_pos = ft_strchr_pos(line + 35, '.');
+		mlx->pl_name = ft_strsub((const char *)line, 35, dot_pos);
 		mlx->pl_init = 1;
 	}
 	else if (!ft_strncmp(line, "$$$ exec p2 :", 13))
@@ -68,8 +69,8 @@ void		ft_get_player(char *line, t_mlx *mlx)
 			mlx->pl_id = 'X';
 			mlx->en_id = 'O';
 		}
-		dot_pos = ft_strchr_pos(line, '.');
-		mlx->en_name = ft_strsub(line, 23, dot_pos - 23);
+		dot_pos = ft_strchr_pos(line + 35, '.');
+		mlx->en_name = ft_strsub((const char *)line, 35, dot_pos);
 		mlx->en_init = 1;
 	}
 }
