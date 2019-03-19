@@ -13,6 +13,20 @@ The game appears on the standard input.
 
 The aim of the game is to put more pieces on the map than the ennemy.
 
+# Usage
+
+```
+git clone https://github.com/kmieshko/filler.git
+cd filler
+make
+./resources/filler_vm -f ./resources/maps/map0[0-2] -p1 ./resources/players/kmieshko.filler -p2 ./resources/players/[bot].filler | ./visual/visual 
+```
+*Notice*:
+ * `bot` this is a bot, that given by 42 school. You can choose any bot.
+ * `kmieshko.filler` this is my player. You can put any bot on this place, and see how battling two bots.
+ * `-p1` and `-p2` this is flags, that show what player start the game (`p1` start first, `p2` start second).
+ * `map0[0-2]` this is size of map (small -> `map00`, middle -> `map01`, big -> `map02`).
+
 # Bonus
 
 1. A visualizer made with the *MinilibX* helps us to understand what's happening.
@@ -22,6 +36,7 @@ The aim of the game is to put more pieces on the map than the ennemy.
 5. You can pause the game (press button `Space` on keyboard)
 
 # Some Examples
+
 
 
 # Disclaimer
