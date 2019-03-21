@@ -38,8 +38,8 @@ make
 # Some Examples
 
 <p align="center">
-<img src="https://github.com/kmieshko/filler/blob/master/examples/filler_small.gif> width="600">
-<img src="https://github.com/kmieshko/filler/raw/master/examples/filler.gif> width="600">
+<img src="https://github.com/kmieshko/filler/blob/master/examples/filler_small.gif" width=600>
+<img src="https://github.com/kmieshko/filler/raw/master/examples/filler.gif" width=600>
 </p>
 
 # Disclaimer
